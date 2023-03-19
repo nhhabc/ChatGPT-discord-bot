@@ -1,5 +1,4 @@
 import { Client, GatewayIntentBits } from 'discord.js';
-import { Configuration, OpenAIApi } from 'openai';
 import dotenv from "dotenv"
 import httpClient from './http-client.js';
 
@@ -43,4 +42,4 @@ client.on("messageCreate", async msg => {
   }
 });
 
-client.login(process.env.TOKEN)
+client.login("MTA4NjcxMTAzNzM4MzkzODA3OA.GGFc9M.cuq0Pj1iU2LZtNvU_Xa1WMBGwCoTo1gkoBL5HE")

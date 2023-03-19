@@ -33,7 +33,7 @@ let createRequest = (baseURL) => {
       config.maxBodyLength = Infinity
       config.headers = {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${process.env.OPENAI_API_KEY}`,
+        'Authorization': `Bearer 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`,
       }
 
       return config;
