@@ -8,11 +8,11 @@ const prefix = "gpt"
 
 const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent], partials: ['MESSAGE', 'CHANNEL', 'REACTION'] });
 
-module.exports = client.on("ready", () => {
+client.on("ready", () => {
   console.log(`Logged in as ${client.user.tag}`);
 })
 
-module.exports = client.on("messageCreate", async msg => {
+client.on("messageCreate", async msg => {
   if(!msg.content.startsWith(prefix) || msg.author.bot) return
   msg.channel.sendTyping()
   try {
@@ -40,5 +40,5 @@ module.exports = client.on("messageCreate", async msg => {
   }
 });
 
-module.exports = client.login(process.env.TOKEN);
+client.login(process.env.TOKEN);
 module.exports = client;
