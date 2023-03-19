@@ -37,9 +37,7 @@ client.on("messageCreate", async msg => {
     if (msg.content) {
       msg.reply({ content: 'ChatGpt is sleeping', ephemeral: true });
     }
-  } finally {
-    
   }
 });
 
-client.login("MTA4NjcxMTAzNzM4MzkzODA3OA.GGFc9M.cuq0Pj1iU2LZtNvU_Xa1WMBGwCoTo1gkoBL5HE")
+client.login(process.env.TOKEN)
