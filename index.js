@@ -1,6 +1,6 @@
-import { Client, GatewayIntentBits } from 'discord.js';
-import dotenv from "dotenv"
-import httpClient from './http-client.js';
+const { Client, GatewayIntentBits } = require('discord.js')
+const dotenv = require("dotenv")
+const httpClient = require('./http-client.js');
 
 dotenv.config()
 
