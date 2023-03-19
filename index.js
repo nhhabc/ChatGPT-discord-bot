@@ -1,17 +1,18 @@
 const { Client, GatewayIntentBits } = require('discord.js')
 const dotenv = require("dotenv")
 const httpClient = require('./http-client.js');
+
 dotenv.config()
 
 const prefix = "gpt"
 
 const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent], partials: ['MESSAGE', 'CHANNEL', 'REACTION'] });
 
-client.on("ready", () => {
+module.exports = client.on("ready", () => {
   console.log(`Logged in as ${client.user.tag}`);
 })
 
-client.on("messageCreate", async msg => {
+module.exports = client.on("messageCreate", async msg => {
   if(!msg.content.startsWith(prefix) || msg.author.bot) return
   msg.channel.sendTyping()
   try {
@@ -39,5 +40,5 @@ client.on("messageCreate", async msg => {
   }
 });
 
-client.login(process.env.TOKEN)
+module.exports = client.login(process.env.TOKEN);
 module.exports = client;
