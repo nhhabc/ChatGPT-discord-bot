@@ -15,6 +15,7 @@ client.on("ready", () => {
 
 client.on("messageCreate", async msg => {
   if(!msg.content.startsWith(prefix) || msg.author.bot) return
+  msg.channel.sendTyping()
   try {
     const args = msg.content.slice(prefix.length).split(/ +/)
     const command = args.join(" ").toLowerCase()
@@ -37,6 +38,8 @@ client.on("messageCreate", async msg => {
     if (msg.content) {
       msg.reply({ content: 'ChatGpt is sleeping', ephemeral: true });
     }
+  } finally {
+    
   }
 });
 
