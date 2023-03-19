@@ -1,11 +1,6 @@
 const { Client, GatewayIntentBits } = require('discord.js')
 const dotenv = require("dotenv")
 const httpClient = require('./http-client.js');
-
-const express = require("express");
-const app = express();
-// Export the Express API
-
 dotenv.config()
 
 const prefix = "gpt"
@@ -45,10 +40,4 @@ client.on("messageCreate", async msg => {
 });
 
 client.login(process.env.TOKEN)
-
-app.listen(5000, () => {
-  console.log("Running on port 5000.");
-});
-
 module.exports = client;
-module.exports = app;
