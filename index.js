@@ -26,6 +26,7 @@ client.on("messageCreate", async msg => {
       ],
       temperature: 0.7
   };
+    console.log(msg.author);
 
     const chatGpt = await httpClient.post("", data)
 
@@ -37,8 +38,8 @@ client.on("messageCreate", async msg => {
     if (msg.content) {
       msg.reply({ content: 'ChatGpt is sleeping', ephemeral: true });
     }
+    return client.login(process.env.TOKEN);
   }
 });
 
 client.login(process.env.TOKEN);
-module.exports = client;
