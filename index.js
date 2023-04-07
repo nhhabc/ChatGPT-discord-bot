@@ -4,7 +4,7 @@ const httpClient = require('./http-client.js');
 
 dotenv.config()
 
-const prefix = "/"
+const prefix = "gpt"
 
 const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent], partials: ['MESSAGE', 'CHANNEL', 'REACTION'] });
 
